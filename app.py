@@ -9,6 +9,8 @@ import math
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 
+
+# Change this so that it works in your machine
 UPLOAD_FOLDER = '/Users/hk/Documents/Team2051/'
 ALLOWED_EXTENSIONS = set(['csv', 'txt'])
 
@@ -76,7 +78,7 @@ def show_dataset(filename):
 
     # Open CSV and show data
 
-    dataframe = read_csv('/Users/hk/Documents/Team2051/' + filename)
+    dataframe = read_csv(UPLOAD_FOLDER + filename)
     print(dataframe)
 
     df_html = dataframe.to_html()
